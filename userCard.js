@@ -32,8 +32,8 @@ template.innerHTML = `
         <div>
             <h3></h3>
             <div class="info">
-                <p>EMAIL</p>
-                <p>PHONE</p>
+                <p><slot name="email" /></p>
+                <p><slot name="phone" /></p>
             </div>
             <button id="toggle-info">Hide Info</button>
         </div>
@@ -48,8 +48,6 @@ class UserCard extends HTMLElement {
     this.shadowRoot.appendChild(template.content.cloneNode(true));
     this.shadowRoot.querySelector("h3").innerText = this.getAttribute("name");
     this.shadowRoot.querySelector("img").src = this.getAttribute("avatar");
-
-    this.innerHTML = ``;
   }
 }
 
